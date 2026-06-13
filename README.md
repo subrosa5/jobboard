@@ -9,6 +9,7 @@
 ![Prisma](https://img.shields.io/badge/Prisma-5-2d3748?style=flat-square&logo=prisma)
 ![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=flat-square&logo=vercel)
 ![Tests](https://img.shields.io/badge/Tests-45%20passed-brightgreen?style=flat-square&logo=vitest)
+![CI](https://github.com/subrosa5/jobboard/actions/workflows/ci.yml/badge.svg)
 
 ---
 
