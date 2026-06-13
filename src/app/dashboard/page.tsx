@@ -108,19 +108,19 @@ export default function DashboardPage() {
   if (!user) return null;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
-      <div className="flex items-center justify-between mb-8">
+    <div className="max-w-6xl mx-auto px-4 py-6 md:py-8">
+      <div className="flex flex-wrap items-start justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Личный кабинет</h1>
-          <p className="text-gray-500 mt-1">{user.name} · {user.role === "SEEKER" ? "Соискатель" : "Работодатель"}</p>
+          <h1 className="text-xl md:text-2xl font-bold text-gray-900">Личный кабинет</h1>
+          <p className="text-gray-500 mt-1 text-sm">{user.name} · {user.role === "SEEKER" ? "Соискатель" : "Работодатель"}</p>
         </div>
         {user.role === "SEEKER" && (
-          <Link href="/resumes/new" className="bg-blue-600 text-white px-5 py-2.5 rounded-xl text-sm font-medium hover:bg-blue-700 transition-colors">
+          <Link href="/resumes/new" className="bg-blue-600 text-white px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-blue-700 transition-colors shrink-0">
             + Создать резюме
           </Link>
         )}
         {user.role === "EMPLOYER" && (
-          <Link href="/vacancies/new" className="bg-green-600 text-white px-5 py-2.5 rounded-xl text-sm font-medium hover:bg-green-700 transition-colors">
+          <Link href="/vacancies/new" className="bg-green-600 text-white px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-green-700 transition-colors shrink-0">
             + Разместить вакансию
           </Link>
         )}

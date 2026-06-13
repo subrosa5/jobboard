@@ -13,12 +13,12 @@ export default async function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 px-4">
+      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-14 md:py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
             Найдите работу мечты или идеального кандидата
           </h1>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-lg md:text-xl text-blue-100 mb-8">
             Тысячи вакансий и резюме на одной платформе
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -39,19 +39,19 @@ export default async function HomePage() {
       </section>
 
       {/* Stats */}
-      <section className="py-12 bg-white">
-        <div className="max-w-5xl mx-auto px-4 grid grid-cols-3 gap-8 text-center">
+      <section className="py-10 md:py-12 bg-white">
+        <div className="max-w-5xl mx-auto px-4 grid grid-cols-3 gap-4 md:gap-8 text-center">
           <div>
-            <p className="text-4xl font-bold text-blue-600">{vacancyCount}</p>
-            <p className="text-gray-600 mt-1">Вакансий</p>
+            <p className="text-2xl md:text-4xl font-bold text-blue-600">{vacancyCount}</p>
+            <p className="text-sm md:text-base text-gray-600 mt-1">Вакансий</p>
           </div>
           <div>
-            <p className="text-4xl font-bold text-blue-600">{resumeCount}</p>
-            <p className="text-gray-600 mt-1">Резюме</p>
+            <p className="text-2xl md:text-4xl font-bold text-blue-600">{resumeCount}</p>
+            <p className="text-sm md:text-base text-gray-600 mt-1">Резюме</p>
           </div>
           <div>
-            <p className="text-4xl font-bold text-blue-600">{userCount}</p>
-            <p className="text-gray-600 mt-1">Пользователей</p>
+            <p className="text-2xl md:text-4xl font-bold text-blue-600">{userCount}</p>
+            <p className="text-sm md:text-base text-gray-600 mt-1">Пользователей</p>
           </div>
         </div>
       </section>
