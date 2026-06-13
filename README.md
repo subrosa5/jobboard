@@ -4,6 +4,12 @@
 
 **Живой сайт:** https://jobboard-beryl.vercel.app
 
+![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
+![Prisma](https://img.shields.io/badge/Prisma-5-2d3748?style=flat-square&logo=prisma)
+![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=flat-square&logo=vercel)
+![Tests](https://img.shields.io/badge/Tests-45%20passed-brightgreen?style=flat-square&logo=vitest)
+
 ---
 
 ## Стек технологий
@@ -191,6 +197,27 @@ Telegram Login Widget:
   пользователь пишет /start <linkCode> боту →
   бот через polling связывает chatId с аккаунтом
 ```
+
+---
+
+## Testing
+
+```bash
+npm test           # run all tests once
+npm run test:watch # watch mode
+```
+
+**45 tests across 5 suites:**
+
+| Suite | Coverage |
+|---|---|
+| `src/lib/auth.test.ts` | `signToken` / `verifyToken` (valid payload, SEEKER/EMPLOYER roles, tampered, invalid, empty), `hashPassword` / `comparePassword` (correct, wrong, plaintext not stored, salt uniqueness) |
+| `src/app/api/auth/login/route.test.ts` | 400 on missing fields, 401 on unknown user, 401 on wrong password, 200 + cookie on success, 2FA flow: returns `requireOTP` and no cookie when Telegram 2FA is enabled |
+| `src/app/api/auth/register/route.test.ts` | 400 on missing fields, 400 on invalid role, 409 on duplicate email, 200 on success, password not exposed in response, httpOnly cookie set |
+| `src/app/api/vacancies/route.test.ts` | GET: returns list with total and pages, empty list on no match, correct pagination; POST: 403 for unauthenticated, 403 for SEEKER, 400 on missing fields, 201 for EMPLOYER |
+| `src/app/api/applications/route.test.ts` | GET: 401 for unauthenticated, returns list for SEEKER and EMPLOYER; POST: 403 for unauthenticated, 403 for EMPLOYER, 400 on missing fields, 404 on resume ownership mismatch, 409 on duplicate application, 201 on success |
+
+**Stack:** Vitest + Testing Library + jsdom
 
 ---
 
